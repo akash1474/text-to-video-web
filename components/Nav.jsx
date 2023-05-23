@@ -4,6 +4,10 @@ import {useSelector,useDispatch} from 'react-redux'
 import Image from "next/image"
 import Link from "next/link"
 
+function randomInt(min, max) {
+  return Math.floor(min + Math.random()*(max - min + 1))
+}
+
 const NavBar=()=>{
 	const user=useSelector(selectUser);
 	const dispatch=useDispatch();
@@ -23,7 +27,7 @@ const NavBar=()=>{
 				<section className="user_info">
 				<p>{user.userData.username}</p>
 				<Image 
-					src="/users/user1.jpg"
+					src={`/users/user${randomInt(0,5)}.jpg`}
 					height={40}
 					width={40}
 					alt="logo"
