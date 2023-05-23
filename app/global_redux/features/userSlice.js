@@ -49,7 +49,7 @@ const userSlice = createSlice({
         return el.email===data.email;
       })
       if(idx >=0){
-        alert("User Already Exists! Try SigningIn");
+        alert("User Already Exists! Try Login");
         return;
       }
       let oldusers=state.accounts;

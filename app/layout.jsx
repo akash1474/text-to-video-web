@@ -12,6 +12,9 @@ export const metadata={
 const RootLayout=({children})=>{
 	return (
 		<html lang="en">
+			<head>
+			<link rel="icon" href="/assets/video_logo.svg" sizes="any" />
+			</head>
 			<body>
 				<main className="app">
 					<Providers>
