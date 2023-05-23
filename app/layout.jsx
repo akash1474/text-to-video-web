@@ -1,9 +1,7 @@
-"use client"
 import "@styles/global.css"
 import "@styles/home.css"
 import "@styles/login.css"
 import NavBar from "@components/Nav"
-// import IconButton from "@components/IconButton"
 import Providers from "./global_redux/provider"
 
 export const metadata={
@@ -19,7 +17,6 @@ const RootLayout=({children})=>{
 					<Providers>
 						<NavBar />
 						{children}
-						{/*<IconButton src={"/assets/video.svg"} />*/}
 					</Providers>
 				</main>
 			</body>
