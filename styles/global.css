@@ -1,0 +1,161 @@
+:root{
+  --font-family:"Recursive Sans Linear";
+  --background-color:#1D1D1D;
+  --grey:#323232;
+  --grey-light:#4B4B4B;
+  --font-size:16px;
+  --light-green:#81FFBD;
+  --sky-blue:#99D1FE;
+  --blue:#436DCD;
+  --yellow:#EF8728;
+  --dark-green:#065F44;
+  --purple-dark:#782CFF;
+  --purple-light:#975DFF;
+  --purple-hover:#8946FF;
+}
+
+
+*,*::after,*::before{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  color:#fff;
+  font-family:var(--font-family);
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #a9a9a9;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track-piece{
+  background-color:  var(--grey-light );
+}
+
+::-webkit-scrollbar-corner{
+  background-color: var(--grey-light);
+}
+
+
+body{
+  background-color: var(--background-color);
+  height: 100vh;
+  width:100%;
+  font-family:var(--font-family);
+  position: absolute;
+  color:#fff;
+}
+.app{
+  position: relative;
+  height: 100%;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav{
+  height:50px;
+  width:100%;
+  top:0;
+  position: absolute;
+  background-color:var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav > section > p {
+  margin:0 10px;
+  font-weight:bold;
+}
+
+
+.nav > section > img {
+  margin:0 10px;
+}
+
+.nav section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav button{
+  border:2px solid white;
+  padding:5px 10px; 
+  background-color:transparent;
+  margin-left:10px;
+  border-radius: 3px;
+  margin-right:10px; 
+  cursor: pointer;
+}
+
+.nav button:hover{
+  background-color:#fff;
+  color:#333;
+}
+
+.nav img{
+  border-radius: 50%;
+}
+
+.home{
+  position: relative;
+  display: flex;
+}
+
+input::placeholder{
+  font-family:inherit;
+
+}
+
+
+.event__button{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding:5px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:background 0.25s;
+  min-width:fit-content;
+  user-select:none;
+}
+
+.iconButton{
+  position: absolute;
+  border-radius: 3px;
+  bottom:20px;
+  right:30px;
+  display: flex;
+  align-items: center;
+  padding:5px 10px;
+  border:none;
+  background:#3f51b5;
+  cursor: pointer;
+}
+
+.iconButton:hover{
+  background-color: #4f65dd;
+}
+
+
+.iconButton:active{
+  background-color:#2d47d9;
+}
+
+.iconButton > p{
+  margin-right: 20px;
+}
