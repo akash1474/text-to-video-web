@@ -46,7 +46,7 @@ const VideoComponent =({video,setIsGenerated,text})=>{
 	          </div>
 	          <div className="event__button btn_share" onClick={
 	          	()=>{
-	          		navigator.clipboard.writeText(`http://localhost:3007${video.src}`);
+	          		navigator.clipboard.writeText(`${window.location.href}${video.src}`);
 	          		setIsCopied(true);
 	          		setTimeout(()=>{
 	          			setIsCopied(false);

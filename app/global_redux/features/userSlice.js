@@ -45,6 +45,13 @@ const userSlice = createSlice({
         alert("Invalid User Credentials");
         return;
       }
+      const idx=state.accounts.findIndex((el)=>{
+        return el.email===data.email;
+      })
+      if(idx >=0){
+        alert("User Already Exists! Try SigningIn");
+        return;
+      }
       let oldusers=state.accounts;
       oldusers.push(data);
       state = {

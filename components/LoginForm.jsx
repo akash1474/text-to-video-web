@@ -23,16 +23,7 @@ const LoginForm=()=>{
 
 
 	return (
-		<div className="LoginPage"
-			onSubmit={(e)=>{
-				e.preventDefault();
-					if(isLogging){
-						dispatch(login({email,password}))
-					}else{
-						dispatch(signup({email,username,password}))
-					}
-				}}
-		>
+		<div className="LoginPage">
 		<Image 
 				src={isLogging ? "/assets/login.svg" : "/assets/signup.svg"}
 				height={450}
@@ -49,10 +40,11 @@ const LoginForm=()=>{
 					className="login_logo"
 				/>	
 				<p className="login_title">{isLogging ? "Login" :"SignUp"}</p>
-				<input placeholder="Email"  onChange={(e)=>{setEmail(e.target.value)}} type="email"/>
-				{(!isLogging) ? <input placeholder="Username"  onChange={(e)=>{setUsername(e.target.value)}} type="text"/> : '' }
-				<input placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}} type="password"/>
-				<input onClick={()=>{
+				<input placeholder="Email" value={email}  onChange={(e)=>{setEmail(e.target.value)}} type="email"/>
+				{(!isLogging) ? <input placeholder="Username" value={username}  onChange={(e)=>{setUsername(e.target.value)}} type="text"/> : '' }
+				<input placeholder="Password" value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password"/>
+				<input onClick={(e)=>{
+					e.preventDefault();
 					if(isLogging){
 						dispatch(login({email,password}))
 					}else{
