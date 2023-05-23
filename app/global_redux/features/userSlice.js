@@ -70,7 +70,7 @@ const userSlice = createSlice({
   },
 });
 
-export const { login, logout,signup } = userSlice.actions;
+export const {login,logout,signup} = userSlice.actions;
 
 export const selectUser = (state) => state.user;
 

@@ -1,7 +1,7 @@
 'use-client'
 
 import {useSelector,useDispatch} from 'react-redux'
-import {selectUser,logout} from '@app/global_redux/features/userSlice'
+import {selectUser,logout} from "../app/global_redux/features/userSlice.js"
 import Image from "next/image"
 import Link from "next/link"
 
