@@ -3,9 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    userData: typeof window !== "undefined" ? JSON.parse(window.localStorage.getItem("userData")): {},
-    accounts: typeof window !== "undefined" ? JSON.parse(window.localStorage.getItem("accounts")): [],
-    isLoggedIn: typeof window !== "undefined" ? JSON.parse(window.localStorage.getItem("isLoggedIn")) : false,
+    userData: typeof window !== "undefined" ? JSON.parse(window.localStorage.getItem("userData")) || {}: {},
+    accounts: typeof window !== "undefined" ? JSON.parse(window.localStorage.getItem("accounts")) || []: [],
+    isLoggedIn: typeof window !== "undefined" ? JSON.parse(window.localStorage.getItem("isLoggedIn")) || false : false,
   },
   reducers: {
 
@@ -13,6 +13,10 @@ const userSlice = createSlice({
       const data = {
         ...actions.payload,
       };
+      if(state.accounts.length == 0 ){
+        alert("Provided email doesn't match our database.");
+        return;
+      }
       const idx=state.accounts.findIndex((el)=>{
         return el.email===data.email;
       })
