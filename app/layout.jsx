@@ -1,3 +1,4 @@
+"use client"
 import "@styles/global.css"
 import "@styles/home.css"
 import "@styles/login.css"
