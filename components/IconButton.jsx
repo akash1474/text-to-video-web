@@ -1,9 +1,11 @@
 "use client"
 import Image from "next/image"
-const IconButton=({src})=>{
+const IconButton=({src,onClick})=>{
 
 	return (
-		<button className="iconButton">
+		<button className="iconButton"
+			onClick={onClick}
+		>
 			<p>Create Video</p>
 			<Image 
 				src={src}

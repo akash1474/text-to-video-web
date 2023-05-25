@@ -20,11 +20,6 @@ const videoSlice = createSlice({
       date:new Date("2023-05-17 11:30 PM").toString()
     },
     {
-      title:"a deer drinking water from a river in the foreset",
-      src:"/videos/deer.gif",
-      date:new Date("2023-05-20 01:30 PM").toString()
-    },
-    {
       title:"a kid running in the playground",
       src:"/videos/kid_running.gif",
       date:new Date("2023-05-10 03:30 PM").toString()
@@ -36,12 +31,40 @@ const videoSlice = createSlice({
       const data = {
         ...actions.payload,
       };
-      state.push(data);
+      if(data.title.length==0){
+        alert("Please provide a video description");
+        return;
+      }
+      const copy=state.videoData;
+      copy.unshift(data);
+      state={
+        ...copy
+      }
+    },
+
+    removeVideo:(state,actions) =>{
+      const data={
+        ...actions.payload
+      }
+
+      const idx=state.videoData.findIndex((el)=>{
+        return el.title===data.title;
+      });
+
+      if(idx===-1){
+        return;
+      }
+
+      const copy=state.videoData;
+      copy.splice(idx,1);
+      state={
+        ...copy
+      }
     }
   },
 });
 
-export const { insertVideo } = videoSlice.actions;
+export const { insertVideo,removeVideo } = videoSlice.actions;
 
 export const selectVideo = (state) => state.video;
 

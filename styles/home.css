@@ -51,6 +51,12 @@
   max-height: 340px;
 }
 
+.bookmark{
+  position: absolute;
+  top:25px;
+  right:40px;
+}
+
 
 .generation > div.container{
   display: flex;

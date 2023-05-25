@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import {useState} from 'react'
 
-const VideoComponent =({video,setIsGenerated,text})=>{
+const VideoComponent =({video,setIsGenerated,text,isBookmarked,setIsBookmarked})=>{
 	const [isPlaying,setIsPlaying]=useState(true);
 	const [isCopied,setIsCopied]=useState(false);
 
